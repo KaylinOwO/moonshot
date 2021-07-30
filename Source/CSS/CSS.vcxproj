@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{2B25F8C0-F91C-41DF-B5B9-BECFD9139A64}</ProjectGuid>
+    <RootNamespace>CSS</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CSS</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\CSS\Debug</OutDir>
+    <IntDir>$(SolutionDir)\Intermediates\CSS\Debug</IntDir>
+    <TargetName>css_debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\CSS\Release</OutDir>
+    <TargetName>css_release</TargetName>
+    <IntDir>$(SolutionDir)\Intermediates\CSS\Release</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CSS\DLLMain.cpp" />
+    <ClCompile Include="CSS\Features\Aimbot\Aimbot.cpp" />
+    <ClCompile Include="CSS\Features\Backtrack\Backtrack.cpp" />
+    <ClCompile Include="CSS\Features\Menu\Framework\Framework.cpp" />
+    <ClCompile Include="CSS\Features\Menu\Input\Input.cpp" />
+    <ClCompile Include="CSS\Features\Menu\Menu.cpp" />
+    <ClCompile Include="CSS\Features\Movement\Movement.cpp" />
+    <ClCompile Include="CSS\Features\Prediction\Prediction.cpp" />
+    <ClCompile Include="CSS\Features\Visuals\ESP\ESP.cpp" />
+    <ClCompile Include="CSS\Features\Visuals\Radar\Radar.cpp" />
+    <ClCompile Include="CSS\Hooks\ClientHook\ClientHook.cpp" />
+    <ClCompile Include="CSS\Hooks\ClientModeHook\ClientModeHook.cpp" />
+    <ClCompile Include="CSS\Hooks\EngineClientHook\EngineClientHook.cpp" />
+    <ClCompile Include="CSS\Hooks\EngineVGuiHook\EngineVGuiHook.cpp" />
+    <ClCompile Include="CSS\Hooks\Hooks.cpp" />
+    <ClCompile Include="CSS\Hooks\PanelHook\PanelHook.cpp" />
+    <ClCompile Include="CSS\Hooks\PredictionHook\PredictionHook.cpp" />
+    <ClCompile Include="CSS\Hooks\SurfaceHook\SurfaceHook.cpp" />
+    <ClCompile Include="CSS\Hooks\WndProcHook\WndProcHook.cpp" />
+    <ClCompile Include="CSS\SDK\Includes\MD5.cpp" />
+    <ClCompile Include="CSS\SDK\Interfaces\ConVar\ConVar.cpp" />
+    <ClCompile Include="CSS\SDK\Interfaces\Interfaces.cpp" />
+    <ClCompile Include="CSS\SDK\Interfaces\NetChannel\NetChannel.cpp" />
+    <ClCompile Include="CSS\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.cpp" />
+    <ClCompile Include="CSS\SDK\Main\BaseEntity\BaseEntity.cpp" />
+    <ClCompile Include="CSS\SDK\Main\BaseObject\BaseObject.cpp" />
+    <ClCompile Include="CSS\SDK\Main\ConVars\ConVars.cpp" />
+    <ClCompile Include="CSS\SDK\Main\DrawUtils\DrawUtils.cpp" />
+    <ClCompile Include="CSS\SDK\Main\EntityCache\EntityCache.cpp" />
+    <ClCompile Include="CSS\SDK\Main\VisCheck\VisCheck.cpp" />
+    <ClCompile Include="CSS\SDK\NetVars\NetVars.cpp" />
+    <ClCompile Include="CSS\Utils\Hash\Hash.cpp" />
+    <ClCompile Include="CSS\Utils\Interface\Interface.cpp" />
+    <ClCompile Include="CSS\Utils\Pattern\Pattern.cpp" />
+    <ClCompile Include="CSS\Utils\UtlVector\UtlVector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSS\Features\Aimbot\Aimbot.h" />
+    <ClInclude Include="CSS\Features\Backtrack\Backtrack.h" />
+    <ClInclude Include="CSS\Features\Menu\Framework\Framework.h" />
+    <ClInclude Include="CSS\Features\Menu\Input\Input.h" />
+    <ClInclude Include="CSS\Features\Menu\Menu.h" />
+    <ClInclude Include="CSS\Features\Movement\Movement.h" />
+    <ClInclude Include="CSS\Features\Prediction\Prediction.h" />
+    <ClInclude Include="CSS\Features\Visuals\ESP\ESP.h" />
+    <ClInclude Include="CSS\Features\Visuals\Radar\Radar.h" />
+    <ClInclude Include="CSS\Hooks\ClientHook\ClientHook.h" />
+    <ClInclude Include="CSS\Hooks\ClientModeHook\ClientModeHook.h" />
+    <ClInclude Include="CSS\Hooks\EngineClientHook\EngineClientHook.h" />
+    <ClInclude Include="CSS\Hooks\EngineVGuiHook\EngineVGuiHook.h" />
+    <ClInclude Include="CSS\Hooks\Hooks.h" />
+    <ClInclude Include="CSS\Hooks\PanelHook\PanelHook.h" />
+    <ClInclude Include="CSS\Hooks\PredictionHook\PredictionHook.h" />
+    <ClInclude Include="CSS\Hooks\SurfaceHook\SurfaceHook.h" />
+    <ClInclude Include="CSS\Hooks\WndProcHook\WndProcHook.h" />
+    <ClInclude Include="CSS\SDK\Includes\Classes.h" />
+    <ClInclude Include="CSS\SDK\Includes\Const.h" />
+    <ClInclude Include="CSS\SDK\Includes\dt_common.h" />
+    <ClInclude Include="CSS\SDK\Includes\dt_recv.h" />
+    <ClInclude Include="CSS\SDK\Includes\Enums.h" />
+    <ClInclude Include="CSS\SDK\Includes\icons.h" />
+    <ClInclude Include="CSS\SDK\Includes\Includes.h" />
+    <ClInclude Include="CSS\SDK\Includes\MD5.h" />
+    <ClInclude Include="CSS\SDK\Includes\Structs.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\BaseClientDLL\BaseClientDLL.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ClientDLLSharedAppSystems\ClientDLLSharedAppSystems.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ClientEntityList\ClientEntityList.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ClientModeShared\ClientModeShared.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ConVar\ConVar.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\DebugOverlay\DebugOverlay.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\EngineClient\EngineClient.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\EngineTrace\EngineTrace.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\EngineVGui\EngineVGui.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\GameEvent\GameEvent.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\GameMovement\GameMovement.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\GlobalVarsBase\GlobalVarsBase.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Interfaces.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Material\Material.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\MatRenderContext\MatRenderContext.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ModelInfo\ModelInfo.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ModelRender\ModelRender.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\MoveHelper\MoveHelper.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\NetChannel\NetChannel.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Panel\Panel.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Prediction\Prediction.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\RenderView\RenderView.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Steam\SteamTypes.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Steam\Steamworks.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Surface\Surface.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\Texture\Texture.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\UniformRandomStream\UniformRandomStream.h" />
+    <ClInclude Include="CSS\SDK\Interfaces\ViewRender\ViewRender.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseEntity\AnimState\Activity.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseEntity\AnimState\BaseAnimatingOverlay.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseEntity\AnimState\MultiPlayerAnimState.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseEntity\AnimState\TFPlayerAnimState.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseEntity\BaseEntity.h" />
+    <ClInclude Include="CSS\SDK\Main\BaseObject\BaseObject.h" />
+    <ClInclude Include="CSS\SDK\Main\ConVars\ConVars.h" />
+    <ClInclude Include="CSS\SDK\Main\DrawUtils\DrawUtils.h" />
+    <ClInclude Include="CSS\SDK\Main\EntityCache\EntityCache.h" />
+    <ClInclude Include="CSS\SDK\Main\GlobalInfo\GlobalInfo.h" />
+    <ClInclude Include="CSS\SDK\Main\VisCheck\VisCheck.h" />
+    <ClInclude Include="CSS\SDK\NetVars\NetVars.h" />
+    <ClInclude Include="CSS\SDK\SDK.h" />
+    <ClInclude Include="CSS\Utils\Color\Color.h" />
+    <ClInclude Include="CSS\Utils\Hash\Hash.h" />
+    <ClInclude Include="CSS\Utils\Interface\Interface.h" />
+    <ClInclude Include="CSS\Utils\Math\Math.h" />
+    <ClInclude Include="CSS\Utils\Pattern\Pattern.h" />
+    <ClInclude Include="CSS\Utils\Utils.h" />
+    <ClInclude Include="CSS\Utils\UtlVector\UtlVector.h" />
+    <ClInclude Include="CSS\Utils\VFunc\VFunc.h" />
+    <ClInclude Include="CSS\Utils\VMT\VMT.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

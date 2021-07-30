@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{B0E892F3-31FF-4AC4-9D80-C58D98FD5E3F}</ProjectGuid>
+    <RootNamespace>TF2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TF2</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\TF2\Debug</OutDir>
+    <IntDir>$(SolutionDir)\Intermediates\TF2\Debug</IntDir>
+    <TargetName>tf2_debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\TF2\Release</OutDir>
+    <TargetName>tf2_release</TargetName>
+    <IntDir>$(SolutionDir)\Intermediates\TF2\Release</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="TF2\DLLMain.cpp" />
+    <ClCompile Include="TF2\Features\Aimbot\Aimbot.cpp" />
+    <ClCompile Include="TF2\Features\Backtrack\Backtrack.cpp" />
+    <ClCompile Include="TF2\Features\Menu\Framework\Framework.cpp" />
+    <ClCompile Include="TF2\Features\Menu\Input\Input.cpp" />
+    <ClCompile Include="TF2\Features\Menu\Menu.cpp" />
+    <ClCompile Include="TF2\Features\Misc\Misc.cpp" />
+    <ClCompile Include="TF2\Features\Movement\Movement.cpp" />
+    <ClCompile Include="TF2\Features\Prediction\Prediction.cpp" />
+    <ClCompile Include="TF2\Features\Visuals\ESP\ESP.cpp" />
+    <ClCompile Include="TF2\Features\Visuals\Radar\Radar.cpp" />
+    <ClCompile Include="TF2\Hooks\ClientHook\ClientHook.cpp" />
+    <ClCompile Include="TF2\Hooks\ClientModeHook\ClientModeHook.cpp" />
+    <ClCompile Include="TF2\Hooks\CLMainHook\CLMainHook.cpp" />
+    <ClCompile Include="TF2\Hooks\EngineClientHook\EngineClientHook.cpp" />
+    <ClCompile Include="TF2\Hooks\EngineVGuiHook\EngineVGuiHook.cpp" />
+    <ClCompile Include="TF2\Hooks\Hooks.cpp" />
+    <ClCompile Include="TF2\Hooks\PanelHook\PanelHook.cpp" />
+    <ClCompile Include="TF2\Hooks\PredictionHook\PredictionHook.cpp" />
+    <ClCompile Include="TF2\Hooks\SurfaceHook\SurfaceHook.cpp" />
+    <ClCompile Include="TF2\Hooks\WndProcHook\WndProcHook.cpp" />
+    <ClCompile Include="TF2\SDK\Includes\MD5.cpp" />
+    <ClCompile Include="TF2\SDK\Interfaces\ConVar\ConVar.cpp" />
+    <ClCompile Include="TF2\SDK\Interfaces\Interfaces.cpp" />
+    <ClCompile Include="TF2\SDK\Interfaces\NetChannel\NetChannel.cpp" />
+    <ClCompile Include="TF2\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.cpp" />
+    <ClCompile Include="TF2\SDK\Main\BaseEntity\BaseEntity.cpp" />
+    <ClCompile Include="TF2\SDK\Main\BaseObject\BaseObject.cpp" />
+    <ClCompile Include="TF2\SDK\Main\ConVars\ConVars.cpp" />
+    <ClCompile Include="TF2\SDK\Main\DrawUtils\DrawUtils.cpp" />
+    <ClCompile Include="TF2\SDK\Main\EntityCache\EntityCache.cpp" />
+    <ClCompile Include="TF2\SDK\Main\VisCheck\VisCheck.cpp" />
+    <ClCompile Include="TF2\SDK\NetVars\NetVars.cpp" />
+    <ClCompile Include="TF2\Utils\Hash\Hash.cpp" />
+    <ClCompile Include="TF2\Utils\Interface\Interface.cpp" />
+    <ClCompile Include="TF2\Utils\Pattern\Pattern.cpp" />
+    <ClCompile Include="TF2\Utils\UtlVector\UtlVector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TF2\Features\Aimbot\Aimbot.h" />
+    <ClInclude Include="TF2\Features\Backtrack\Backtrack.h" />
+    <ClInclude Include="TF2\Features\Menu\Framework\Framework.h" />
+    <ClInclude Include="TF2\Features\Menu\Input\Input.h" />
+    <ClInclude Include="TF2\Features\Menu\Menu.h" />
+    <ClInclude Include="TF2\Features\Misc\Misc.h" />
+    <ClInclude Include="TF2\Features\Movement\Movement.h" />
+    <ClInclude Include="TF2\Features\Prediction\Prediction.h" />
+    <ClInclude Include="TF2\Features\Visuals\ESP\ESP.h" />
+    <ClInclude Include="TF2\Features\Visuals\Radar\Radar.h" />
+    <ClInclude Include="TF2\Hooks\ClientHook\ClientHook.h" />
+    <ClInclude Include="TF2\Hooks\ClientModeHook\ClientModeHook.h" />
+    <ClInclude Include="TF2\Hooks\CLMainHook\CLMainHook.h" />
+    <ClInclude Include="TF2\Hooks\EngineClientHook\EngineClientHook.h" />
+    <ClInclude Include="TF2\Hooks\EngineVGuiHook\EngineVGuiHook.h" />
+    <ClInclude Include="TF2\Hooks\Hooks.h" />
+    <ClInclude Include="TF2\Hooks\PanelHook\PanelHook.h" />
+    <ClInclude Include="TF2\Hooks\PredictionHook\PredictionHook.h" />
+    <ClInclude Include="TF2\Hooks\SurfaceHook\SurfaceHook.h" />
+    <ClInclude Include="TF2\Hooks\WndProcHook\WndProcHook.h" />
+    <ClInclude Include="TF2\SDK\Includes\Classes.h" />
+    <ClInclude Include="TF2\SDK\Includes\Const.h" />
+    <ClInclude Include="TF2\SDK\Includes\dt_common.h" />
+    <ClInclude Include="TF2\SDK\Includes\dt_recv.h" />
+    <ClInclude Include="TF2\SDK\Includes\Enums.h" />
+    <ClInclude Include="TF2\SDK\Includes\icons.h" />
+    <ClInclude Include="TF2\SDK\Includes\Includes.h" />
+    <ClInclude Include="TF2\SDK\Includes\MD5.h" />
+    <ClInclude Include="TF2\SDK\Includes\Structs.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\BaseClientDLL\BaseClientDLL.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ClientDLLSharedAppSystems\ClientDLLSharedAppSystems.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ClientEntityList\ClientEntityList.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ClientModeShared\ClientModeShared.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ConVar\ConVar.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\DebugOverlay\DebugOverlay.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\EngineClient\EngineClient.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\EngineTrace\EngineTrace.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\EngineVGui\EngineVGui.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\GameEvent\GameEvent.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\GameMovement\GameMovement.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\GlobalVarsBase\GlobalVarsBase.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Interfaces.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Material\Material.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\MatRenderContext\MatRenderContext.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ModelInfo\ModelInfo.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ModelRender\ModelRender.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\MoveHelper\MoveHelper.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\NetChannel\NetChannel.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Panel\Panel.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Prediction\Prediction.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\RenderView\RenderView.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Steam\SteamTypes.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Steam\Steamworks.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Surface\Surface.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\Texture\Texture.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\UniformRandomStream\UniformRandomStream.h" />
+    <ClInclude Include="TF2\SDK\Interfaces\ViewRender\ViewRender.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseEntity\AnimState\Activity.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseEntity\AnimState\BaseAnimatingOverlay.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseEntity\AnimState\MultiPlayerAnimState.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseEntity\AnimState\TFPlayerAnimState.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseEntity\BaseEntity.h" />
+    <ClInclude Include="TF2\SDK\Main\BaseObject\BaseObject.h" />
+    <ClInclude Include="TF2\SDK\Main\ConVars\ConVars.h" />
+    <ClInclude Include="TF2\SDK\Main\DrawUtils\DrawUtils.h" />
+    <ClInclude Include="TF2\SDK\Main\EntityCache\EntityCache.h" />
+    <ClInclude Include="TF2\SDK\Main\GlobalInfo\GlobalInfo.h" />
+    <ClInclude Include="TF2\SDK\Main\VisCheck\VisCheck.h" />
+    <ClInclude Include="TF2\SDK\NetVars\NetVars.h" />
+    <ClInclude Include="TF2\SDK\SDK.h" />
+    <ClInclude Include="TF2\Utils\Color\Color.h" />
+    <ClInclude Include="TF2\Utils\Detours\BytePatch.h" />
+    <ClInclude Include="TF2\Utils\Detours\Detours.h" />
+    <ClInclude Include="TF2\Utils\Hash\Hash.h" />
+    <ClInclude Include="TF2\Utils\Interface\Interface.h" />
+    <ClInclude Include="TF2\Utils\Math\Math.h" />
+    <ClInclude Include="TF2\Utils\Pattern\Pattern.h" />
+    <ClInclude Include="TF2\Utils\Utils.h" />
+    <ClInclude Include="TF2\Utils\UtlVector\UtlVector.h" />
+    <ClInclude Include="TF2\Utils\VFunc\VFunc.h" />
+    <ClInclude Include="TF2\Utils\VMT\VMT.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

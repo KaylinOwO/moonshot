@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{382A3D65-BD44-4B45-89DA-46E9F50B5D56}</ProjectGuid>
+    <RootNamespace>GMOD</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GMOD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\GMOD\Debug</OutDir>
+    <IntDir>$(SolutionDir)\Intermediates\GMOD\Debug</IntDir>
+    <TargetName>gmod_debug</TargetName>
+    <IncludePath>$(SolutionDir)\Dependencies\Minhook\hde;$(SolutionDir)\Dependencies\Minhook;$(SolutionDir)\Dependencies\DX9\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\DX9\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Binaries\GMOD\Release</OutDir>
+    <TargetName>gmod_release</TargetName>
+    <IntDir>$(SolutionDir)\Intermediates\GMOD\Release</IntDir>
+    <IncludePath>$(SolutionDir)\Dependencies\Minhook;$(SolutionDir)\Dependencies\Minhook\hde;$(SolutionDir)\Dependencies\DX9\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\DX9\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Dependencies\Minhook\buffer.c" />
+    <ClCompile Include="..\..\Dependencies\Minhook\hde\hde32.c" />
+    <ClCompile Include="..\..\Dependencies\Minhook\hde\hde64.c" />
+    <ClCompile Include="..\..\Dependencies\Minhook\hook.c" />
+    <ClCompile Include="..\..\Dependencies\Minhook\trampoline.c" />
+    <ClCompile Include="GMOD\DLLMain.cpp" />
+    <ClCompile Include="GMOD\Features\Aimbot\Aimbot.cpp" />
+    <ClCompile Include="GMOD\Features\Backtrack\Backtrack.cpp" />
+    <ClCompile Include="GMOD\Features\Menu\Framework\Framework.cpp" />
+    <ClCompile Include="GMOD\Features\Menu\Input\Input.cpp" />
+    <ClCompile Include="GMOD\Features\Menu\Menu.cpp" />
+    <ClCompile Include="GMOD\Features\Misc\Misc.cpp" />
+    <ClCompile Include="GMOD\Features\Movement\Movement.cpp" />
+    <ClCompile Include="GMOD\Features\Prediction\Prediction.cpp" />
+    <ClCompile Include="GMOD\Features\Visuals\ESP\ESP.cpp" />
+    <ClCompile Include="GMOD\Features\Visuals\Radar\Radar.cpp" />
+    <ClCompile Include="GMOD\Hooks\ClientHook\ClientHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\ClientModeHook\ClientModeHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\D3DHook\D3DHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\Detours\DetourHooks.cpp" />
+    <ClCompile Include="GMOD\Hooks\EngineClientHook\EngineClientHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\EngineVGuiHook\EngineVGuiHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\Hooks.cpp" />
+    <ClCompile Include="GMOD\Hooks\PanelHook\PanelHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\PredictionHook\PredictionHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\SurfaceHook\SurfaceHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\ViewRenderHook\ViewRenderHook.cpp" />
+    <ClCompile Include="GMOD\Hooks\WndProcHook\WndProcHook.cpp" />
+    <ClCompile Include="GMOD\SDK\Includes\MD5.cpp" />
+    <ClCompile Include="GMOD\SDK\Interfaces\ConVar\ConVar.cpp" />
+    <ClCompile Include="GMOD\SDK\Interfaces\Interfaces.cpp" />
+    <ClCompile Include="GMOD\SDK\Interfaces\NetChannel\NetChannel.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\BaseEntity\BaseEntity.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\BaseObject\BaseObject.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\ConVars\ConVars.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\DrawUtils\DrawUtils.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\EntityCache\EntityCache.cpp" />
+    <ClCompile Include="GMOD\SDK\Main\VisCheck\VisCheck.cpp" />
+    <ClCompile Include="GMOD\SDK\NetVars\NetVars.cpp" />
+    <ClCompile Include="GMOD\Utils\Hash\Hash.cpp" />
+    <ClCompile Include="GMOD\Utils\Interface\Interface.cpp" />
+    <ClCompile Include="GMOD\Utils\Pattern\Pattern.cpp" />
+    <ClCompile Include="GMOD\Utils\Security\Security.cpp" />
+    <ClCompile Include="GMOD\Utils\UtlVector\UtlVector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GMOD\Features\Aimbot\Aimbot.h" />
+    <ClInclude Include="GMOD\Features\Backtrack\Backtrack.h" />
+    <ClInclude Include="GMOD\Features\Menu\Framework\Framework.h" />
+    <ClInclude Include="GMOD\Features\Menu\Input\Input.h" />
+    <ClInclude Include="GMOD\Features\Menu\Menu.h" />
+    <ClInclude Include="GMOD\Features\Misc\Misc.h" />
+    <ClInclude Include="GMOD\Features\Movement\Movement.h" />
+    <ClInclude Include="GMOD\Features\Prediction\Prediction.h" />
+    <ClInclude Include="GMOD\Features\Visuals\ESP\ESP.h" />
+    <ClInclude Include="GMOD\Features\Visuals\Radar\Radar.h" />
+    <ClInclude Include="GMOD\Hooks\ClientHook\ClientHook.h" />
+    <ClInclude Include="GMOD\Hooks\ClientModeHook\ClientModeHook.h" />
+    <ClInclude Include="GMOD\Hooks\D3DHook\D3DHook.h" />
+    <ClInclude Include="GMOD\Hooks\Detours\DetourHooks.h" />
+    <ClInclude Include="GMOD\Hooks\EngineClientHook\EngineClientHook.h" />
+    <ClInclude Include="GMOD\Hooks\EngineVGuiHook\EngineVGuiHook.h" />
+    <ClInclude Include="GMOD\Hooks\Hooks.h" />
+    <ClInclude Include="GMOD\Hooks\PanelHook\PanelHook.h" />
+    <ClInclude Include="GMOD\Hooks\PredictionHook\PredictionHook.h" />
+    <ClInclude Include="GMOD\Hooks\SurfaceHook\SurfaceHook.h" />
+    <ClInclude Include="GMOD\Hooks\ViewRenderHook\ViewRenderHook.h" />
+    <ClInclude Include="GMOD\Hooks\WndProcHook\WndProcHook.h" />
+    <ClInclude Include="GMOD\SDK\Includes\Classes.h" />
+    <ClInclude Include="GMOD\SDK\Includes\Const.h" />
+    <ClInclude Include="GMOD\SDK\Includes\dt_common.h" />
+    <ClInclude Include="GMOD\SDK\Includes\dt_recv.h" />
+    <ClInclude Include="GMOD\SDK\Includes\Enums.h" />
+    <ClInclude Include="GMOD\SDK\Includes\icons.h" />
+    <ClInclude Include="GMOD\SDK\Includes\Includes.h" />
+    <ClInclude Include="GMOD\SDK\Includes\MD5.h" />
+    <ClInclude Include="GMOD\SDK\Includes\Structs.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\BaseClientDLL\BaseClientDLL.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ClientDLLSharedAppSystems\ClientDLLSharedAppSystems.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ClientEntityList\ClientEntityList.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ClientModeShared\ClientModeShared.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ConVar\ConVar.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\DebugOverlay\DebugOverlay.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\EngineClient\EngineClient.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\EngineTrace\EngineTrace.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\EngineVGui\EngineVGui.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\GameEvent\GameEvent.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\GameMovement\GameMovement.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\GlobalVarsBase\GlobalVarsBase.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Interfaces.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Material\Material.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\MatRenderContext\MatRenderContext.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ModelInfo\ModelInfo.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ModelRender\ModelRender.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\MoveHelper\MoveHelper.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\NetChannel\NetChannel.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Panel\Panel.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Prediction\Prediction.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\RenderView\RenderView.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Steam\SteamTypes.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Steam\Steamworks.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Surface\Surface.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\Texture\Texture.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\UniformRandomStream\UniformRandomStream.h" />
+    <ClInclude Include="GMOD\SDK\Interfaces\ViewRender\ViewRender.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseCombatWeapon\BaseCombatWeapon.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseEntity\AnimState\Activity.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseEntity\AnimState\BaseAnimatingOverlay.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseEntity\AnimState\MultiPlayerAnimState.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseEntity\AnimState\TFPlayerAnimState.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseEntity\BaseEntity.h" />
+    <ClInclude Include="GMOD\SDK\Main\BaseObject\BaseObject.h" />
+    <ClInclude Include="GMOD\SDK\Main\ConVars\ConVars.h" />
+    <ClInclude Include="GMOD\SDK\Main\DrawUtils\DrawUtils.h" />
+    <ClInclude Include="GMOD\SDK\Main\EntityCache\EntityCache.h" />
+    <ClInclude Include="GMOD\SDK\Main\GlobalInfo\GlobalInfo.h" />
+    <ClInclude Include="GMOD\SDK\Main\VisCheck\VisCheck.h" />
+    <ClInclude Include="GMOD\SDK\NetVars\NetVars.h" />
+    <ClInclude Include="GMOD\SDK\SDK.h" />
+    <ClInclude Include="GMOD\Utils\Color\Color.h" />
+    <ClInclude Include="GMOD\Utils\Detours\BytePatch.h" />
+    <ClInclude Include="GMOD\Utils\Detours\Detours.h" />
+    <ClInclude Include="GMOD\Utils\Hash\Hash.h" />
+    <ClInclude Include="GMOD\Utils\Interface\Interface.h" />
+    <ClInclude Include="GMOD\Utils\Math\Math.h" />
+    <ClInclude Include="GMOD\Utils\Pattern\Pattern.h" />
+    <ClInclude Include="GMOD\Utils\Security\Security.h" />
+    <ClInclude Include="GMOD\Utils\Utils.h" />
+    <ClInclude Include="GMOD\Utils\UtlVector\UtlVector.h" />
+    <ClInclude Include="GMOD\Utils\VFunc\VFunc.h" />
+    <ClInclude Include="GMOD\Utils\VMT\VMT.h" />
+    <ClInclude Include="GMOD\Utils\Xor\Xor.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
