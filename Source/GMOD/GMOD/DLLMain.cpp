@@ -6,9 +6,7 @@
 
 DWORD WINAPI MainThread(LPVOID lpParam)
 {
-	if (gSecurity.Run())
-	{
-		Util::InitDebug();
+	Util::InitDebug();
 
 		gInts.Init();
 		gNetVars.Init();
@@ -38,7 +36,6 @@ DWORD WINAPI MainThread(LPVOID lpParam)
 		gHooks.Release();
 		Util::ReleaseDebug();
 		FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_SUCCESS);
-	}
 }
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
