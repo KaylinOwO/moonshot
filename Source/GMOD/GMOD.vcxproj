@@ -137,7 +137,6 @@
     <ClCompile Include="GMOD\Utils\Hash\Hash.cpp" />
     <ClCompile Include="GMOD\Utils\Interface\Interface.cpp" />
     <ClCompile Include="GMOD\Utils\Pattern\Pattern.cpp" />
-    <ClCompile Include="GMOD\Utils\Security\Security.cpp" />
     <ClCompile Include="GMOD\Utils\UtlVector\UtlVector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -221,7 +220,6 @@
     <ClInclude Include="GMOD\Utils\Interface\Interface.h" />
     <ClInclude Include="GMOD\Utils\Math\Math.h" />
     <ClInclude Include="GMOD\Utils\Pattern\Pattern.h" />
-    <ClInclude Include="GMOD\Utils\Security\Security.h" />
     <ClInclude Include="GMOD\Utils\Utils.h" />
     <ClInclude Include="GMOD\Utils\UtlVector\UtlVector.h" />
     <ClInclude Include="GMOD\Utils\VFunc\VFunc.h" />

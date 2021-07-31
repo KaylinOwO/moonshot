@@ -223,9 +223,6 @@
     <Filter Include="GMOD\Hooks\ViewRenderHook">
       <UniqueIdentifier>{f3b0fd08-1750-4fa4-9d38-b2299df3c929}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GMOD\Utils\Security">
-      <UniqueIdentifier>{79267e09-f2d4-471c-b257-cab627c6f1ea}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GMOD\Utils\Xor">
       <UniqueIdentifier>{c148bcbc-580f-49d1-a1df-81d4436b698e}</UniqueIdentifier>
     </Filter>
@@ -353,9 +350,6 @@
     </ClCompile>
     <ClCompile Include="GMOD\Hooks\ViewRenderHook\ViewRenderHook.cpp">
       <Filter>GMOD\Hooks\ViewRenderHook</Filter>
-    </ClCompile>
-    <ClCompile Include="GMOD\Utils\Security\Security.cpp">
-      <Filter>GMOD\Utils\Security</Filter>
     </ClCompile>
     <ClCompile Include="GMOD\Hooks\D3DHook\D3DHook.cpp">
       <Filter>GMOD\Hooks\D3DHook</Filter>
@@ -625,9 +619,6 @@
     </ClInclude>
     <ClInclude Include="GMOD\Hooks\ViewRenderHook\ViewRenderHook.h">
       <Filter>GMOD\Hooks\ViewRenderHook</Filter>
-    </ClInclude>
-    <ClInclude Include="GMOD\Utils\Security\Security.h">
-      <Filter>GMOD\Utils\Security</Filter>
     </ClInclude>
     <ClInclude Include="GMOD\Utils\Xor\Xor.h">
       <Filter>GMOD\Utils\Xor</Filter>
